@@ -1,6 +1,11 @@
 import getRandom from './getRandom.js'
 
 const ddmg = (b1,b3) => {
+    if(b3.isDead == true){
+        b3.dmg = 0
+        console.log(`|  droid \x1b[35m${b3.name}\x1b[0m \x1b[31mis dead\x1b[0m`)
+        return
+    }
     if(b1.accArr[getRandom(b1.accArr.length)] == 1){
         if(b3.ddgArr[getRandom(b3.ddgArr.length)] == 1) {
             b3.onBlock()

@@ -34,15 +34,30 @@ export default class PHANTOM extends Droid{
     }
 
     getDamage(dmg){
+        if(this.isDead == true){
+            this.dmg = 0
+            console.log(`|  droid \x1b[35m${this.name}\x1b[0m \x1b[31mis dead\x1b[0m`)
+            return
+        }
         this.hp = this.hp - dmg
         console.log(`|  Droid \x1b[35m${this.name}\x1b[0m got \x1b[31m${dmg}\x1b[0m damage, \x1b[32m${this.hp}\x1b[0m hp left`)
     }
 
     onBlock(){
+        if(this.isDead == true){
+            this.dmg = 0
+            console.log(`|  droid \x1b[35m${this.name}\x1b[0m \x1b[31mis dead\x1b[0m`)
+            return
+        }
         console.log(`|  Atack \x1b[31mdodged\x1b[0m`)
     }
 
     regeneration(){
+        if(this.isDead == true){
+            this.dmg = 0
+            console.log(`|  droid \x1b[35m${this.name}\x1b[0m \x1b[31mis dead\x1b[0m`)
+            return
+        }
         if(this.hp <= 0){
             this.death()
             console.log(`|  Droid \x1b[35m${this.name}\x1b[0m \x1b[31mDESTROYED!!!\x1b[0m`)

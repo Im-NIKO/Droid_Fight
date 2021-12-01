@@ -2,7 +2,7 @@ import startTurn from './startTurn.js'
 import getRandom from './getRandom.js'
 
 
-const startBatle = (bot1,bot2,duoArr) => {
+const startBattle = (bot1,bot2,duoArr) => {
     let b1
     let b2
     let change
@@ -28,4 +28,4 @@ const startBatle = (bot1,bot2,duoArr) => {
     }
 }
 
-export default startBatle
+export default startBattle
